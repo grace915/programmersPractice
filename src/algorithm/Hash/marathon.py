@@ -1,9 +1,12 @@
+
 def solution(participant, completion):
     answer = ''
-    for personin
+    for  person in participant:
+        if person in completion:
+            completion.remove(person)
+        else:
+            answer = person
 
     return answer
-
-a = input()
-b = input()
+# 효율성 극악
 
