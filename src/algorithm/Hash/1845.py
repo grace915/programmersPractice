@@ -1,3 +1,4 @@
+import itertools
 def solution(nums):
     # 4마리 -> 3123 / 3 2마리, 1 1마리, 2번 1마리
     # 31, 32, 33, 12, 13, 23
@@ -5,7 +6,6 @@ def solution(nums):
 
     # 333224
     # 324
-
     num = len(nums) / 2
     dic = {}
     nums.sort()
