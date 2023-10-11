@@ -1,12 +1,18 @@
-def solution(numbers, target):
-    answer = 0
+import collections
 
-    tree = [0]
-    for n in numbers:
-        list = []
-        for i in tree:
-            list.append(i - n)
-            list.append(i + n)
-        tree = list
-    answer = tree.count(target)
-    return answer
+
+def solution(numbers, target):
+    total = 0
+
+    def dfs(index, total):
+        if len(numbers) == index:
+            if total == target:
+                return 1
+            return 0
+
+        ret = 0
+        ret += dfs(index + 1, total + numbers[index]) # 더하거나
+        ret += dfs(index + 1, total - numbers[index]) # 빼거나
+        return ret
+
+    return dfs(0, 0)

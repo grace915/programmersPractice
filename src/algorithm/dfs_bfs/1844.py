@@ -13,9 +13,9 @@ def solution(maps):
 
     q.append([0, 0])
     visited = [[False for _ in range(m)] for _ in range(n)]
+    visited[0][0] = True
     while q:
         x, y = q.popleft()
-        visited[x][y] = True
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
